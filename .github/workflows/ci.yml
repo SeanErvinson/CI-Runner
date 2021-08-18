@@ -14,7 +14,7 @@ jobs:
 
       - name: Visit site/s
         run: |
-           sites=($(echo "$env.sites" | tr ',' '\n'))
+           sites=($(echo "$SITES" | tr ',' '\n'))
            for site in ${sites[@]}; do curl -l $site; done;
         env:
-          sites: 'https://api.seanervinson.com/api/v1/links,'
+          SITES: 'https://api.seanervinson.com/api/v1/links,'
